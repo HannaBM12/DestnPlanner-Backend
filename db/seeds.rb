@@ -1,8 +1,8 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
-# Examples:
-#
+
+
 require 'uri'
 require 'net/http'
 require 'openssl'
@@ -47,5 +47,27 @@ Traveler.destroy_all
      end
         
     res1 = Reservation.create(check_in: '2021-06-21', check_out: '2021-06-23', no_of_night: 2, no_of_room: 1, cancelation_policy: 'Free', traveler_id: traveler1.id, hotel_id: Hotel.all.sample.id, total: 200.50)
+
+    reviews = Review.create([
+        {
+            title: 'Great Hotel',
+            description: "I had a lovely time",
+            score: 5,
+            hotel_id: Hotel.all.sample.id,
+            traveler_id: traveler1.id
+
+        },
+
+        {
+            title: 'Bad Hotel',
+            description: "I had a bad time",
+            score: 1,
+            hotel_id: Hotel.all.sample.id,
+            traveler_id: traveler1.id
+        }
+
+    ])
+
+
 
    

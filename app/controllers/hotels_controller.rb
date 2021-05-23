@@ -10,4 +10,9 @@ class HotelsController < ApplicationController
         render json: hotel, except:[:created_at, :updated_at]
     end
 
+    def search
+        byebug
+    end
+
+
 end
