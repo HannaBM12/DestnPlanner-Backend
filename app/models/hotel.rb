@@ -10,9 +10,9 @@ class Hotel < ApplicationRecord
     # end
 
     def avg_score
-        return self.rating unless reviews.count.positive? 
+        return self.rating || 0 unless reviews.count.positive? 
 
-        (reviews.average(:score).round(2).to_f + self.rating)/2
+        (reviews.average(:score).to_f + self.rating)/2
     end
 
 

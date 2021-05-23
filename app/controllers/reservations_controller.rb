@@ -13,7 +13,7 @@ class ReservationsController < ApplicationController
 
     def create
         reservation = Reservation.create!(reservation_params)
-        render json: reservation
+        render json: reservation, except:[:created_at, :updated_at]
 
     end
 
