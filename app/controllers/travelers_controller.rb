@@ -1,5 +1,4 @@
 class TravelersController < ApplicationController
-
     before_action :authenticate, only: [:me, :update]
 
     def index

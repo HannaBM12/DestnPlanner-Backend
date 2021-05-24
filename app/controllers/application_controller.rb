@@ -8,7 +8,7 @@ class ApplicationController < ActionController::API
         @current_traveler = Traveler.find_by(id: payload['traveler_id'])
 
     rescue
-        render json: { errors: ["Not Authorized"] }, status: :unauthorized
+        render json: { errors: ["Not Authorized, Please Login/SignUp"] }, status: :unauthorized
     
     end
     

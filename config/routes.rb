@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :reservations
   resources :hotels
   resources :travelers
+  get '/travelers', to: "travelers#index"
   post "/login", to: "travelers#login"
   post "/signup", to: "travelers#signup"
   get "/me", to: "travelers#me"
