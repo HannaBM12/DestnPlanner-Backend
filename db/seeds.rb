@@ -9,6 +9,7 @@ require 'openssl'
 
 ENV["RAPID_KEY"]
 
+Review.destroy_all
 Reservation.destroy_all
 Hotel.destroy_all
 Traveler.destroy_all
@@ -16,7 +17,7 @@ Traveler.destroy_all
 
 
 
-    traveler1 = Traveler.create(name: 'Hanna', email: 'Hanna@gmail.com', age: '25', password_digest: '123')
+    traveler1 = Traveler.create(name: 'Hanna', email: 'Hannabmulugeta@gmail.com', age: '25', password: '123')
 
     url = URI("https://hotels4.p.rapidapi.com/properties/list?adults1=1&pageNumber=1&destinationId=1506246&pageSize=25&checkOut=2021-07-12&checkIn=2021-07-13&starRatings=3%2C4%2C5&sortOrder=PRICE&locale=en_US&currency=USD")
 
