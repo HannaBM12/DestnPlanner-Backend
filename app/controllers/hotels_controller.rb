@@ -25,7 +25,7 @@ class HotelsController < ApplicationController
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
         
         request = Net::HTTP::Get.new(url)
-        request["x-rapidapi-key"] = '3ad5c48d3dmshf704b5af68d53e9p1f565djsn4c80a4e80613'
+        request["x-rapidapi-key"] = '3a3e0e0425msh236ece8b9ff69d4p135b13jsnca348f010e70'
         request["x-rapidapi-host"] = 'hotels4.p.rapidapi.com'
         
         response = http.request(request)
