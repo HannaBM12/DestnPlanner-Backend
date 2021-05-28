@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_22_203650) do
+ActiveRecord::Schema.define(version: 2021_05_28_005524) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,29 @@ ActiveRecord::Schema.define(version: 2021_05_22_203650) do
     t.index ["traveler_id"], name: "index_reviews_on_traveler_id"
   end
 
+  create_table "tour_reservations", force: :cascade do |t|
+    t.string "date"
+    t.integer "quantity"
+    t.float "total"
+    t.bigint "traveler_id", null: false
+    t.bigint "tour_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["tour_id"], name: "index_tour_reservations_on_tour_id"
+    t.index ["traveler_id"], name: "index_tour_reservations_on_traveler_id"
+  end
+
+  create_table "tours", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "image"
+    t.float "price"
+    t.string "location"
+    t.string "video"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "travelers", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -73,4 +96,6 @@ ActiveRecord::Schema.define(version: 2021_05_22_203650) do
   add_foreign_key "reservations", "travelers"
   add_foreign_key "reviews", "hotels"
   add_foreign_key "reviews", "travelers"
+  add_foreign_key "tour_reservations", "tours"
+  add_foreign_key "tour_reservations", "travelers"
 end

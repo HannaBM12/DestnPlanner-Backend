@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tour_reservations
+  resources :tours
   resources :reviews
   resources :reservations
   resources :hotels
