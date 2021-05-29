@@ -1,15 +1,15 @@
 class TourReservationSerializer < ActiveModel::Serializer
-  attributes :id, :date, :quantity, :total, :image, :tour_name
-
+  attributes :id, :date, :quantity, :tour_total, :timage
   has_one :traveler
   has_one :tour
 
-  def image
-    self.object.tour.image
+
+  def timage
+    self.object.tour.timage
   end
 
-  def tour_name
-    self.object.tour.name
-  end
+  # def tour_name
+  #   self.object.tour.name
+  # end
 
 end

@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2021_05_28_005524) do
   create_table "tour_reservations", force: :cascade do |t|
     t.string "date"
     t.integer "quantity"
-    t.float "total"
+    t.float "tour_total"
     t.bigint "traveler_id", null: false
     t.bigint "tour_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -75,8 +75,8 @@ ActiveRecord::Schema.define(version: 2021_05_28_005524) do
   create_table "tours", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "image"
-    t.float "price"
+    t.string "timage"
+    t.float "tprice"
     t.string "location"
     t.string "video"
     t.datetime "created_at", precision: 6, null: false
