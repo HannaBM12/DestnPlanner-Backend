@@ -16,6 +16,11 @@ class TourReservationsController < ApplicationController
         render json: tour, except:[:created_at, :updated_at]
     end
 
+    def destroy
+        tour = TourReservation.find_by(id: params[:id])
+        tour.destroy!
+        render json: {}
+    end
 
     private
 
