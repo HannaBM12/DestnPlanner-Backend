@@ -1,5 +1,5 @@
 class ReservationSerializer < ActiveModel::Serializer
-    attributes :id, :check_in, :check_out, :no_of_night, :no_of_room, :cancelation_policy, :image, :traveler_id, :hotel_id, :hotel_name, :total, :price, :avg_score
+    attributes :id, :check_in, :check_out, :no_of_night, :no_of_room, :cancelation_policy, :image, :traveler_id, :hotel_id, :hotel_name, :total, :price, :avg_score, :location
 
     def hotel_name
       self.object.hotel.name
@@ -15,6 +15,10 @@ class ReservationSerializer < ActiveModel::Serializer
 
     def price
       self.object.hotel.price
+    end
+
+    def location
+      self.object.hotel.location
     end
   
     

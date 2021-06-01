@@ -1,5 +1,5 @@
 class TourReservationSerializer < ActiveModel::Serializer
-  attributes :id, :date, :quantity, :tour_total, :timage, :traveler_id, :tour_id
+  attributes :id, :date, :quantity, :tour_total, :timage, :traveler_id, :tour_id, :location
 
 
 
@@ -7,8 +7,8 @@ class TourReservationSerializer < ActiveModel::Serializer
     self.object.tour.timage
   end
 
-  # def tour_name
-  #   self.object.tour.name
-  # end
+  def location
+    self.object.tour.location
+  end
 
 end
